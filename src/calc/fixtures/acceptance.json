@@ -1,0 +1,97 @@
+[
+  {
+    "name": "pipe_friction_dP_per_1000ft_workbook_G_Bx",
+    "inputs": {
+      "Q_gpm": 600,
+      "ID_in": 4,
+      "MW_ppg": 10.5,
+      "theta600": 19,
+      "theta300": 13,
+      "theta6": 2,
+      "theta3": 1,
+      "geometry": "workbook G=Ba/Bx with x=1.0678"
+    },
+    "expect": {
+      "dP_psi_per_1000ft": 85.31434615398504,
+      "approx": "~85 psi/1000ft",
+      "tolerance_pct": 2,
+      "source": "REVIEW spot-check + Calculations!B61 cached; independent Python reproduces 85.314\u2026"
+    }
+  },
+  {
+    "name": "hydrostatic_rcd_to_ss",
+    "inputs": {
+      "height_ft": 30,
+      "MW_ppg": 10.5,
+      "factor": 0.052,
+      "formula": "H * MW * 0.052"
+    },
+    "expect": {
+      "hydro_psi": 16.38,
+      "source": "1. Input Data!M34 cached = C14*L5*0.052"
+    }
+  },
+  {
+    "name": "rheology_PV_YP_LSYP",
+    "inputs": {
+      "theta600": 19,
+      "theta300": 13,
+      "theta6": 2,
+      "theta3": 1
+    },
+    "expect": {
+      "PV": 6,
+      "YP": 7,
+      "LSYP": 0
+    }
+  },
+  {
+    "name": "pipe_velocity",
+    "inputs": {
+      "Q_gpm": 600,
+      "ID_in": 4
+    },
+    "expect": {
+      "Vp_ft_per_min": 919.125,
+      "formula": "24.51 * Q / ID^2"
+    }
+  },
+  {
+    "name": "sample_L1_Leq_and_line_PL",
+    "inputs": {
+      "pipe_ft": 120,
+      "tees_line": 5,
+      "elbows": 1,
+      "eq_tees_line_4in": 7,
+      "eq_elbows_4in": 10,
+      "dP_per_1000ft": 85.31434615398504
+    },
+    "expect": {
+      "Leq_ft": 165,
+      "line_PL_psi": 14.076867115407532,
+      "source": "Calculations!B5 / B24 / Input M23 cached"
+    }
+  },
+  {
+    "name": "two_chokes_halves_flow",
+    "inputs": {
+      "Q_gpm": 600,
+      "path": "Two Chokes"
+    },
+    "expect": {
+      "manifold_choke_Q_gpm": 300,
+      "source": "Calculations!L37/N37/\u2026 = (M14+M15)/2"
+    }
+  },
+  {
+    "name": "pure_Ba_reference_deviation",
+    "inputs": {
+      "same_as": "pipe_friction_dP_per_1000ft_workbook_G_Bx",
+      "geometry": "pure API pipe G=Ba (no Bx)"
+    },
+    "expect": {
+      "dP_psi_per_1000ft_approx": 86.0,
+      "note": "REVIEW: ~1% higher than workbook G=Ba/Bx; document deviation, keep workbook G for V1"
+    }
+  }
+]
