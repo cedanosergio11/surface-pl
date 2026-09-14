@@ -1,0 +1,497 @@
+{
+  "source": {
+    "workbook": "/workspace/mpd-study/stasis/calculators/Surface_MPD_PressureLoss_FIXED.xlsm",
+    "sheet": "4. Model Paramaters",
+    "note": "Sheet name typo Paramaters is intentional (matches workbook)."
+  },
+  "pipe_ids_in": {
+    "4in": {
+      "label": "4\"",
+      "cell": "D4",
+      "id_in": 4
+    },
+    "6in": {
+      "label": "6\"",
+      "cell": "E4",
+      "id_in": 6
+    },
+    "8in": {
+      "label": "8\"",
+      "cell": "F4",
+      "id_in": 8
+    },
+    "10in": {
+      "label": "10\"",
+      "cell": "G4",
+      "id_in": 10
+    },
+    "custom_pipe": {
+      "label": "Custom Pipe",
+      "cell": "H4",
+      "id_in": 5
+    },
+    "custom_manifold": {
+      "label": "Custom Manifold",
+      "cell": "I4",
+      "id_in": 6
+    },
+    "7_1_16in": {
+      "label": "7 1/16\"",
+      "cell": "J4",
+      "id_in": 7.0625
+    }
+  },
+  "eq_length_factors_ft": {
+    "description": "Equivalent length per fitting (ft) by pipe ID column. Rows D7:J11.",
+    "columns": [
+      "4in",
+      "6in",
+      "8in",
+      "10in",
+      "custom_pipe",
+      "custom_manifold",
+      "7_1_16in"
+    ],
+    "cells_by_column": [
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "tees_line_flow": {
+      "row": 7,
+      "values": {
+        "4in": 7,
+        "6in": 10,
+        "8in": 13.5,
+        "10in": 17,
+        "custom_pipe": 10,
+        "custom_manifold": 10,
+        "7_1_16in": 10
+      }
+    },
+    "tees_branched_flow": {
+      "row": 8,
+      "values": {
+        "4in": 22,
+        "6in": 31,
+        "8in": 40,
+        "10in": 50,
+        "custom_pipe": 31,
+        "custom_manifold": 31,
+        "7_1_16in": 31
+      }
+    },
+    "elbows": {
+      "row": 9,
+      "values": {
+        "4in": 10,
+        "6in": 15,
+        "8in": 20,
+        "10in": 25,
+        "custom_pipe": 15,
+        "custom_manifold": 15,
+        "7_1_16in": 15
+      }
+    },
+    "butterfly_valve": {
+      "row": 10,
+      "values": {
+        "4in": 15,
+        "6in": 23,
+        "8in": 30,
+        "10in": 30,
+        "custom_pipe": 23,
+        "custom_manifold": 23,
+        "7_1_16in": 23
+      }
+    },
+    "kuka_valve": {
+      "row": 11,
+      "values": {
+        "4in": 110,
+        "6in": 160,
+        "8in": 220,
+        "10in": 284,
+        "custom_pipe": 160,
+        "custom_manifold": 160,
+        "7_1_16in": 160
+      }
+    }
+  },
+  "choke_eq_lengths": {
+    "description": "Wide-open choke body as equivalent length of pipe (U30:W31).",
+    "3in": {
+      "size_label": "3\"",
+      "cell_size": "U30",
+      "eq_length_ft": 18,
+      "eq_length_cell": "V30",
+      "id_in": 3,
+      "id_cell": "W30"
+    },
+    "6in": {
+      "size_label": "6\"",
+      "cell_size": "U31",
+      "eq_length_ft": 37,
+      "eq_length_cell": "V31",
+      "id_in": 6,
+      "id_cell": "W31"
+    }
+  },
+  "manifold_geometry": {
+    "description": "Manifold internal pipe + fittings used for Leq (D14:G26). IDs via formulas to D4/J4/I4.",
+    "options": {
+      "4in_L_shaped": {
+        "label": "4\" L-Shaped",
+        "input_match": "4 in L-shaped",
+        "id_formula": "=D4",
+        "id_in": 4,
+        "pipe_ft": 10,
+        "hose_ft": null,
+        "tees_line_flow": null,
+        "tees_branched_flow": 2,
+        "elbows": 1,
+        "butterfly_orbit": 2,
+        "kuka": null
+      },
+      "4in_flat": {
+        "label": "4\" Flat",
+        "input_match": "4 in Flat",
+        "id_formula": "=D4",
+        "id_in": 4,
+        "pipe_ft": 10,
+        "hose_ft": null,
+        "tees_line_flow": null,
+        "tees_branched_flow": 2,
+        "elbows": 1,
+        "butterfly_orbit": 4,
+        "kuka": null
+      },
+      "7_1_16in_L_shaped": {
+        "label": "7-1/16\" L-Shaped",
+        "input_match": "7-1/16 in L-Shaped",
+        "id_formula": "=J4",
+        "id_in": 7.0625,
+        "pipe_ft": 10,
+        "hose_ft": null,
+        "tees_line_flow": null,
+        "tees_branched_flow": 2,
+        "elbows": 1,
+        "butterfly_orbit": 2,
+        "kuka": null
+      },
+      "custom": {
+        "label": "Custom Manifold (G14=I3)",
+        "input_match": "Custom",
+        "id_formula": "=I4",
+        "id_in": 6,
+        "pipe_ft": 10,
+        "hose_ft": null,
+        "tees_line_flow": null,
+        "tees_branched_flow": 2,
+        "elbows": 1,
+        "butterfly_orbit": 2,
+        "kuka": null
+      }
+    },
+    "note_missing": "Hose (row 21) and Tees Line Flow (row 22) and Kuka (row 26) cells under manifold columns D\u2013G are blank (None)."
+  },
+  "flow_meter_geometry": {
+    "description": "FM body eq-L geometry H14:J26. Elbows H24:J24=4 each; other fitting rows blank.",
+    "sizes": {
+      "4in": {
+        "label": "4\"",
+        "id_formula": "=D4",
+        "id_in": 4,
+        "elbows": 4
+      },
+      "6in": {
+        "label": "6\"",
+        "id_formula": "=E4",
+        "id_in": 6,
+        "elbows": 4
+      },
+      "8in": {
+        "label": "8\"",
+        "id_formula": "=F4",
+        "id_in": 8,
+        "elbows": 4,
+        "label_cell_note": "J14 has trailing space '8\" '"
+      }
+    }
+  },
+  "specialty_equipment": {
+    "distribution_manifold": {
+      "id_in": 5,
+      "id_cell": "D32",
+      "pipe_ft": 12,
+      "hose_ft": null,
+      "tees_line": null,
+      "tees_branched": null,
+      "elbows": 1,
+      "butterfly": 3,
+      "kuka": null,
+      "eq_length_table_ref_col": "E",
+      "eq_length_factors_used": {
+        "tees_line": 10,
+        "tees_branched": 31,
+        "elbows": 15,
+        "butterfly": 23,
+        "kuka": 160
+      }
+    },
+    "flow_meter_manifold": {
+      "id_in": 6,
+      "id_cell": "F32",
+      "pipe_ft": 10,
+      "hose_ft": null,
+      "tees_line": null,
+      "tees_branched": 2,
+      "elbows": 1,
+      "butterfly": 2,
+      "kuka": null,
+      "eq_length_factors_used": {
+        "tees_line": 10,
+        "tees_branched": 31,
+        "elbows": 15,
+        "butterfly": 23,
+        "kuka": 160
+      }
+    },
+    "miscellaneous_linear_curve": {
+      "description": "Simple linear misc PL vs flow (I32:J33) scaled by MW (I34).",
+      "point1": {
+        "flow_gpm": 100,
+        "dP_psi": 10
+      },
+      "point2": {
+        "flow_gpm": 300,
+        "dP_psi": 12
+      },
+      "mw_ref_ppg": 12,
+      "formula_ref": "Calculations!Z15"
+    }
+  },
+  "mud_property_bounds": {
+    "MW_ppg": {
+      "upper": 17.5,
+      "lower": 8.5
+    },
+    "Temp_F": {
+      "upper": 120,
+      "lower": 120
+    },
+    "theta600": {
+      "upper": 120,
+      "lower": 4
+    },
+    "theta300": {
+      "upper": 77,
+      "lower": 3
+    },
+    "theta6": {
+      "upper": 19,
+      "lower": 1
+    },
+    "theta3": {
+      "upper": 15,
+      "lower": 1
+    }
+  },
+  "package_defaults": {
+    "description": "From P2:T9 equipment selectors and P14:AA24 line tables. Heights P3/R3/T3 and P4/R4/T4 are BLANK in workbook.",
+    "missing_cells": [
+      "P3",
+      "R3",
+      "T3",
+      "P4",
+      "R4",
+      "T4",
+      "Package FM manifold / misc / dist. manifold flags \u2014 not present on sheet"
+    ],
+    "Offshore": {
+      "label": "Standard Offshore Well",
+      "height_rcd_to_ss_ft": null,
+      "height_rcd_to_ss_cell": "P3",
+      "height_rcd_to_mgs_ft": null,
+      "height_rcd_to_mgs_cell": "P4",
+      "manifold_size": "4 in L-shaped",
+      "choke_size": "3 in",
+      "flow_path": "Two Chokes",
+      "flow_meter_size": "6 in",
+      "returns_to": "Shale Shakers",
+      "fm_manifold": null,
+      "misc": null,
+      "dist_manifold": null,
+      "lines": {
+        "L1_RCD_to_Manifold_1": {
+          "size": "6 in",
+          "pipe_ft": null,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null,
+          "note": "P18/P19/P20\u2013P24 blank"
+        },
+        "L2_RCD_to_Manifold_2": {
+          "size": "6 in",
+          "pipe_ft": 45.5,
+          "hose_ft": 50,
+          "tees_line": 4,
+          "tees_branched": null,
+          "elbows": 5,
+          "butterfly": 1,
+          "kuka": 2
+        },
+        "L3_Manifold_to_SS": {
+          "size": "6 in",
+          "pipe_ft": 47,
+          "hose_ft": 70,
+          "tees_line": 2,
+          "tees_branched": 0,
+          "elbows": 3,
+          "butterfly": 1,
+          "kuka": 0
+        },
+        "L4_Manifold_to_MGS": {
+          "size": "6 in",
+          "pipe_ft": null,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null,
+          "note": "S18:S24 blank"
+        }
+      }
+    },
+    "Land": {
+      "label": "Standard Land Well",
+      "height_rcd_to_ss_ft": null,
+      "height_rcd_to_ss_cell": "R3",
+      "height_rcd_to_mgs_ft": null,
+      "height_rcd_to_mgs_cell": "R4",
+      "manifold_size": "4 in L-shaped",
+      "choke_size": "3 in",
+      "flow_path": "Two Chokes",
+      "flow_meter_size": "6 in",
+      "returns_to": "Shale Shakers",
+      "fm_manifold": null,
+      "misc": null,
+      "dist_manifold": null,
+      "lines": {
+        "L1_RCD_to_Manifold_1": {
+          "size": "4 in",
+          "pipe_ft": null,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null,
+          "note": "T18:T24 blank"
+        },
+        "L2_RCD_to_Manifold_2": {
+          "size": "4 in",
+          "pipe_ft": 30,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": 5,
+          "butterfly": null,
+          "kuka": null
+        },
+        "L3_Manifold_to_SS": {
+          "size": "4 in",
+          "pipe_ft": 20,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": 3,
+          "butterfly": null,
+          "kuka": null
+        },
+        "L4_Manifold_to_MGS": {
+          "size": "4 in",
+          "pipe_ft": null,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null,
+          "note": "W18:W24 blank"
+        }
+      }
+    },
+    "Deepwater": {
+      "label": "Standard Deepwater Well",
+      "height_rcd_to_ss_ft": null,
+      "height_rcd_to_ss_cell": "T3",
+      "height_rcd_to_mgs_ft": null,
+      "height_rcd_to_mgs_cell": "T4",
+      "manifold_size": "7-1/16 in L-Shaped",
+      "choke_size": "6 in",
+      "flow_path": "Two Chokes",
+      "flow_meter_size": "6 in",
+      "returns_to": "Shale Shakers",
+      "fm_manifold": null,
+      "misc": null,
+      "dist_manifold": null,
+      "lines": {
+        "L1_RCD_to_Manifold_1": {
+          "size": "6 in",
+          "pipe_ft": null,
+          "hose_ft": 200,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null
+        },
+        "L2_RCD_to_Manifold_2": {
+          "size": "6 in",
+          "pipe_ft": 62,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": 6,
+          "butterfly": 3,
+          "kuka": 2
+        },
+        "L3_Manifold_to_SS": {
+          "size": "6 in",
+          "pipe_ft": 25,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": 2,
+          "elbows": 2,
+          "butterfly": 4,
+          "kuka": 1
+        },
+        "L4_Manifold_to_MGS": {
+          "size": "6 in",
+          "pipe_ft": null,
+          "hose_ft": null,
+          "tees_line": null,
+          "tees_branched": null,
+          "elbows": null,
+          "butterfly": null,
+          "kuka": null,
+          "note": "AA18:AA24 blank"
+        }
+      }
+    }
+  },
+  "leq_line_formula": {
+    "description": "Calculations!B5 style for L1 at 4in; same pattern for L2\u2013L4 / other IDs",
+    "expression": "Leq = pipe_ft + hose_ft + n_tees_line*eq.tees_line + n_tees_branched*eq.tees_branched + n_elbows*eq.elbows + n_butterfly*eq.butterfly + n_kuka*eq.kuka",
+    "blank_counts_as_zero": true
+  }
+}
