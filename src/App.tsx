@@ -1,1 +1,1 @@
-@file:/tmp/App.tsx
+PLACEHOLDER_WILL_FAIL_ASSERT
