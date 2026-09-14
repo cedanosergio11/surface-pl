@@ -1,0 +1,268 @@
+{
+  "source": {
+    "workbook": "/workspace/mpd-study/stasis/calculators/Surface_MPD_PressureLoss_FIXED.xlsm",
+    "sheet": "1. Input Data",
+    "note": "Values from sample workbook; blank cells reported as null. data_only cached outputs included for spot-check."
+  },
+  "well_name": {
+    "cell": "B3",
+    "value": null,
+    "note": "Label present; value cell empty in sample"
+  },
+  "heights_ft": {
+    "rcd_to_shale_shakers": {
+      "cell": "C14",
+      "value": 30
+    },
+    "rcd_to_mgs_inlet": {
+      "cell": "C15",
+      "value": 10
+    }
+  },
+  "equipment": {
+    "manifold_size": {
+      "cell": "C16",
+      "value": "4 in L-shaped"
+    },
+    "choke_size": {
+      "cell": "C17",
+      "value": "3 in"
+    },
+    "flow_path": {
+      "cell": "C18",
+      "value": "One Choke"
+    },
+    "flow_meter_size": {
+      "cell": "C19",
+      "value": "4 in"
+    },
+    "returns_to": {
+      "cell": "C20",
+      "value": "MGS"
+    },
+    "flow_meter_manifold": {
+      "cell": "C22",
+      "value": null
+    },
+    "misc_other_equip": {
+      "cell": "C23",
+      "value": null
+    },
+    "distribution_manifold": {
+      "cell": "C24",
+      "value": null
+    }
+  },
+  "mud_properties": {
+    "columns": {
+      "Max": "K",
+      "Average": "L",
+      "Min": "M"
+    },
+    "MW_ppg": {
+      "K5": 10.5,
+      "L5": 10.5,
+      "M5": 10.5
+    },
+    "Temp_ref_F": {
+      "K6": 120,
+      "L6": 120,
+      "M6": 120
+    },
+    "theta600": {
+      "K7": 19,
+      "L7": 19,
+      "M7": 19
+    },
+    "theta300": {
+      "K8": 13,
+      "L8": 13,
+      "M8": 13
+    },
+    "theta6": {
+      "K9": 2,
+      "L9": 2,
+      "M9": 2
+    },
+    "theta3": {
+      "K10": 1,
+      "L10": 1,
+      "M10": 1
+    },
+    "live_calc_uses": "Average column L via Average!BK14:BK19"
+  },
+  "operating": {
+    "pump_rate_gpm": {
+      "cell": "M14",
+      "value": 600
+    },
+    "riser_booster_gpm": {
+      "cell": "M15",
+      "value": null
+    },
+    "max_operating_design_pressure_psi": {
+      "cell": "M16",
+      "value": null
+    }
+  },
+  "lines": {
+    "L1_RCD_to_Manifold": {
+      "size": {
+        "cell": "D29",
+        "value": "4 in"
+      },
+      "pipe_ft": {
+        "cell": "D30",
+        "value": 120
+      },
+      "hose_ft": {
+        "cell": "D31",
+        "value": null
+      },
+      "tees_line": {
+        "cell": "D32",
+        "value": 5
+      },
+      "tees_branched": {
+        "cell": "D33",
+        "value": null
+      },
+      "elbows": {
+        "cell": "D34",
+        "value": 1
+      },
+      "butterfly": {
+        "cell": "D35",
+        "value": null
+      },
+      "kuka": {
+        "cell": "D36",
+        "value": null
+      }
+    },
+    "L2_RCD_to_Manifold": {
+      "size": {
+        "cell": "E29",
+        "value": "4 in"
+      },
+      "pipe_ft": {
+        "cell": "E30",
+        "value": 120
+      },
+      "hose_ft": {
+        "cell": "E31",
+        "value": null
+      },
+      "tees_line": {
+        "cell": "E32",
+        "value": 5
+      },
+      "tees_branched": {
+        "cell": "E33",
+        "value": null
+      },
+      "elbows": {
+        "cell": "E34",
+        "value": 1
+      },
+      "butterfly": {
+        "cell": "E35",
+        "value": null
+      },
+      "kuka": {
+        "cell": "E36",
+        "value": null
+      }
+    },
+    "L3_Manifold_to_SS": {
+      "size": {
+        "cell": "F29",
+        "value": null
+      },
+      "pipe_ft": {
+        "cell": "F30",
+        "value": null
+      },
+      "hose_ft": {
+        "cell": "F31",
+        "value": null
+      },
+      "tees_line": {
+        "cell": "F32",
+        "value": null
+      },
+      "tees_branched": {
+        "cell": "F33",
+        "value": null
+      },
+      "elbows": {
+        "cell": "F34",
+        "value": null
+      },
+      "butterfly": {
+        "cell": "F35",
+        "value": null
+      },
+      "kuka": {
+        "cell": "F36",
+        "value": null
+      },
+      "note": "Entire Line 3 empty in sample"
+    },
+    "L4_Manifold_to_MGS": {
+      "size": {
+        "cell": "G29",
+        "value": "4 in"
+      },
+      "pipe_ft": {
+        "cell": "G30",
+        "value": 30
+      },
+      "hose_ft": {
+        "cell": "G31",
+        "value": 20
+      },
+      "tees_line": {
+        "cell": "G32",
+        "value": 5
+      },
+      "tees_branched": {
+        "cell": "G33",
+        "value": null
+      },
+      "elbows": {
+        "cell": "G34",
+        "value": 1
+      },
+      "butterfly": {
+        "cell": "G35",
+        "value": null
+      },
+      "kuka": {
+        "cell": "G36",
+        "value": null
+      }
+    }
+  },
+  "cached_outputs_data_only": {
+    "note": "From openpyxl data_only=True (Excel-cached).",
+    "BP_wellhead_J20_psi": 58.47545156792435,
+    "PL_L1_M23_psi": 14.076867115407532,
+    "PL_L2_M24_psi": 14.076867115407532,
+    "PL_L3_M25_psi": 0,
+    "PL_L4_M26_psi": 8.104862884628579,
+    "RCD_to_SS_lines_M27_psi": 28.153734230815065,
+    "RCD_to_MGS_lines_M28_psi": 36.25859711544364,
+    "PL_manifold_M29_psi": 13.344280606321307,
+    "PL_FM_M30_psi": 3.4125738461594017,
+    "PL_FM_manifold_M31_psi": 0,
+    "PL_dist_manifold_M32_psi": 0,
+    "PL_misc_M33_psi": 0,
+    "hydro_SS_M34_psi": 16.38,
+    "PL_system_SS_M35_psi": 44.91058868329577,
+    "BP_SS_M36_psi": 61.290588683295766,
+    "hydro_MGS_M37_psi": 5.46,
+    "Calculations_B61_dP_per_1000ft_psi": 85.31434615398504,
+    "Calculations_B5_Leq_L1_ft": 165
+  }
+}
